@@ -1,0 +1,58 @@
+{
+  "name": "sozluk-gov-tr",
+  "version": "1.0.0",
+  "description": "TDK (Türk Dil Kurumu) sözlük API client — sozluk.gov.tr üzerinden kelime sorgulama",
+  "keywords": [
+    "tdk",
+    "sozluk",
+    "turkish",
+    "dictionary",
+    "turk-dil-kurumu",
+    "sozluk.gov.tr"
+  ],
+  "license": "MIT",
+  "author": "Onur Ege <info@onurege.click>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onurege3467/sozluk-gov-tr"
+  },
+  "bugs": {
+    "url": "https://github.com/onurege3467/sozluk-gov-tr/issues"
+  },
+  "homepage": "https://github.com/onurege3467/sozluk-gov-tr#readme",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "build:check": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
